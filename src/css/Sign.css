@@ -1,0 +1,18 @@
+.Welcome {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Welcome h1 {
+  margin-bottom: 0;
+}
+
+.Welcome img {
+  max-width: 90%;
+}
+
+.Welcome h5 {
+  font-size: 18px;
+}

@@ -1,0 +1,35 @@
+.SignDropDown {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.SignDropDown ul {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 200px;
+  height: 75px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.SignDropDown ul li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  border-bottom: 1px solid #ccc;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.SignDropDown ul li img {
+  max-width: 30px;
+  margin-right: 10px;
+}

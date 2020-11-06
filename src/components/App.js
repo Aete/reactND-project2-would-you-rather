@@ -3,6 +3,8 @@ import { handleInitialData } from '../actions/shared';
 import { connect } from 'react-redux';
 
 import Title from './Title';
+import Sign from './Sign';
+import Loading from './Loading';
 
 class App extends Component {
   componentDidMount() {
@@ -15,8 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
-
-        {Object.keys(users).length > 0 ? 'Would you rather' : 'Loading'}
+        {Object.keys(users).length > 0 ? <Sign /> : <Loading />}
       </div>
     );
   }
