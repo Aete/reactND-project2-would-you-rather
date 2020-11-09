@@ -2,21 +2,23 @@
   position: relative;
   display: flex;
   border-bottom: 1px solid #ccc;
-  width: 200px;
+  width: 300px;
   height: 30px;
   padding-left: 10px;
   box-sizing: border-box;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .SignDropDown ul {
   position: absolute;
   top: 15px;
   left: 0px;
-  width: 200px;
+  width: 300px;
   height: 75px;
   list-style-type: none;
   padding-left: 0;
+  background-color: #fff;
 }
 
 .SignDropDown ul li {
@@ -27,6 +29,11 @@
   padding-left: 10px;
   padding-bottom: 5px;
   cursor: pointer;
+}
+
+.SignDropDown ul li a {
+  display: flex;
+  align-items: center;
 }
 
 .SignDropDown ul li img {

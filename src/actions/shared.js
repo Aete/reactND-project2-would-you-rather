@@ -6,7 +6,6 @@ export function handleInitialData() {
   return (dispatch) => {
     return _getInitialData().then(({ users, questions }) => {
       dispatch(receiveUsers(users));
-      console.log(questions);
       dispatch(receiveQuestions(questions));
     });
   };

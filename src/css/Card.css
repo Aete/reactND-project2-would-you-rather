@@ -1,0 +1,14 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+}
+
+.Card div {
+  display: flex;
+  flex-direction: row;
+}
+
+.Card div .Card__text {
+  display: flex;
+  flex-direction: column;
+}

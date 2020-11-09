@@ -1,17 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SignDropDown from './SignDropDown';
-import '../css/Sign.css';
+import Title from './Title';
+import '../css/Welcome.css';
+import '../css/Title.css';
 
-function Sign() {
+function Welcome() {
   return (
     <div className="Welcome">
+      <Title />
       <img
         src="https://via.placeholder.com/300"
         alt="Welcome Logo Placeholder"
       />
-      <h1>Welcome!</h1>
-      <h5>Please sign in to continue</h5>
+      <h1>Sign in</h1>
       <SignDropDown />
     </div>
   );
@@ -21,4 +23,4 @@ function mapStateToProps({ users }) {
   return { users };
 }
 
-export default connect(mapStateToProps)(Sign);
+export default connect(mapStateToProps)(Welcome);

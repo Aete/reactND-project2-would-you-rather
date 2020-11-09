@@ -1,10 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { handleInitialData } from '../actions/shared';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Title from './Title';
-import Sign from './Sign';
+import Welcome from './Welcome';
+import Home from './Home';
 import Loading from './Loading';
+
+import '../css/App.css';
 
 class App extends Component {
   componentDidMount() {
@@ -13,11 +16,16 @@ class App extends Component {
 
   render() {
     const { users } = this.props;
-    console.log('users');
     return (
       <div className="App">
-        <Title />
-        {Object.keys(users).length > 0 ? <Sign /> : <Loading />}
+        {Object.keys(users).length > 0 ? (
+          <Router>
+            <Route exact path="/" component={Welcome} />
+            <Route path="/question/:id" component={Home} />
+          </Router>
+        ) : (
+          <Loading />
+        )}
       </div>
     );
   }
