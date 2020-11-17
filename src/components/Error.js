@@ -1,12 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Error() {
   return (
     <div>
-      <NavLink to="/">
+      <h1> Error! Please go back to the homepage</h1>
+      <Link to="/">
         <button>Home</button>
-      </NavLink>
+      </Link>
     </div>
   );
 }
