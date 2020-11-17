@@ -23,10 +23,14 @@ class CardList extends Component {
     if (users[authedUser] === undefined) {
       return <Redirect to={`/`} />;
     }
-    const answered = Object.keys(users[authedUser].answers);
-    const unanswered = Object.keys(questions).filter((q) => {
-      return answered.includes(q) === false;
-    });
+    const answered = Object.keys(users[authedUser].answers).sort(
+      (a, b) => questions[b].timestamp - questions[a].timestamp
+    );
+    const unanswered = Object.keys(questions)
+      .filter((q) => {
+        return answered.includes(q) === false;
+      })
+      .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
     return (
       <div className="CardList">
         <div className="CardList__button">
