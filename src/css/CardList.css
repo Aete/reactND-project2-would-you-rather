@@ -1,0 +1,26 @@
+.CardList {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.CardList ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.CardList .CardList__button {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.CardList .CardList__button button {
+  background-color: #fff;
+  text-decoration: underline;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  margin-top: 20px;
+}

@@ -1,0 +1,44 @@
+.Score {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  width: 400px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.Score img {
+  max-height: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.Score__text {
+  border-left: 1px solid #ccc;
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.Score .Score__text h3 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.Score__text ul li:last-child {
+  font-weight: 700;
+}
+
+.Score .Rank {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #121212;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 35px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -20,7 +20,7 @@ class SignDropDown extends Component {
   handleAuthUser(e, id) {
     e.preventDefault();
     this.props.dispatch(setAuthedUser(id));
-    this.props.history.push(`/question/${id}`);
+    this.props.history.push(`/user/${id}`);
   }
 
   render() {
@@ -38,7 +38,7 @@ class SignDropDown extends Component {
                 key={user.id}
                 onClick={(e) => this.handleAuthUser(e, user.id)}
               >
-                <Link to={`/question/${user.id}`}>
+                <Link to={`/user/${user.id}`}>
                   <img src={user.avatarURL} alt="avatar" />
                   <span>{user.name}</span>
                 </Link>

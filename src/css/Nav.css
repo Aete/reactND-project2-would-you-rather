@@ -1,0 +1,39 @@
+.Nav {
+  border-bottom: 1px solid #ccc;
+  width: 700px;
+}
+
+.Nav ul {
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  padding-left: 0;
+}
+
+.Nav ul li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.Nav ul li a {
+  text-decoration: none;
+}
+
+.Nav ul li a:visited {
+  color: #bbb;
+}
+
+.Nav ul li a:hover {
+  color: #121212;
+}
+
+.Nav ul .Nav__user {
+  margin-left: 20px;
+}
+
+.Nav__user img {
+  margin-right: 10px;
+  max-height: 30px;
+}

@@ -1,33 +1,59 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import Card from './Card';
 
-import '../css/Question.css';
+import '../css/CardList.css';
 
-class Questions extends Component {
+class CardList extends Component {
   state = {
-    answered: true,
+    answered: false,
   };
-  toggle = () => {
+  toggle = (text) => {
     this.setState(() => {
       return {
-        answered: !this.state.answered,
+        answered: text === 'answered' ? true : false,
       };
     });
   };
 
   render() {
     const { users, questions, authedUser } = this.props;
+    if (users[authedUser] === undefined) {
+      return <Redirect to={`/`} />;
+    }
     const answered = Object.keys(users[authedUser].answers);
     const unanswered = Object.keys(questions).filter((q) => {
       return answered.includes(q) === false;
     });
     return (
-      <div className="Question">
-        <div>
-          <button onClick={this.toggle}>Answered</button>
-          <button onClick={this.toggle}>Unanswered</button>
+      <div className="CardList">
+        <div className="CardList__button">
+          <button
+            style={
+              this.state.answered === false
+                ? { fontWeight: 700, color: '#000' }
+                : { fontWeight: 300, color: '#ccc' }
+            }
+            onClick={() => {
+              this.toggle('unanswered');
+            }}
+          >
+            Unanswered
+          </button>
+          <button
+            style={
+              this.state.answered === true
+                ? { fontWeight: 700, color: '#000' }
+                : { fontWeight: 300, color: '#ccc' }
+            }
+            onClick={() => {
+              this.toggle('answered');
+            }}
+          >
+            Answered
+          </button>
         </div>
         <ul>
           {this.state.answered === true &&
@@ -68,4 +94,4 @@ function mapStateToProps({ users, questions, authedUser }) {
   return { users, questions, authedUser };
 }
 
-export default connect(mapStateToProps)(Questions);
+export default connect(mapStateToProps)(CardList);

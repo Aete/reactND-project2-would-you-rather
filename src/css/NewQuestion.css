@@ -1,0 +1,48 @@
+.NewQuestion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.NewQuestion .NewQuestion__card {
+  border: 1px solid #ccc;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  margin-top: 50px;
+}
+
+.NewQuestion__card h2 {
+  margin: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #969696;
+  padding-bottom: 10px;
+}
+
+.NewQuestion__main {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
+
+.NewQuestion__main img {
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.NewQuestion__text h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+.NewQuestion__text p {
+  margin: 10px 0;
+}
+
+.NewQuestion__text input {
+  width: 270px;
+  font-size: 15px;
+}

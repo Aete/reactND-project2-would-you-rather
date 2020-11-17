@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import Title from './Title';
+import '../css/Home.css';
 import Nav from './Nav';
-import Questions from './Questions';
+import CardList from './CardList';
 
 class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Title />
-        <Nav />
-        <Questions />
+        <Nav highlight="Home" />
+        <CardList />
       </div>
     );
   }

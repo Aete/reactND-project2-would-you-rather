@@ -1,14 +1,52 @@
 .Card {
   display: flex;
   flex-direction: column;
+  margin: 10px 0;
+  padding: 0 15px 15px 15px;
+  border: 1px solid #ccc;
+  min-width: 400px;
 }
 
-.Card div {
+.Card h3 {
+  margin: 10px 0 0 0;
+  font-size: 18px;
+}
+
+.Card button {
+  height: 30px;
+}
+
+.Card .Card__main {
   display: flex;
   flex-direction: row;
+  height: 100px;
+  margin: 20px 0;
 }
 
-.Card div .Card__text {
+.Card__main .Card__img {
+  display: flex;
+  align-items: center;
+}
+
+.Card__img img {
+  height: 100px;
+}
+
+.Card__main .Card__text {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+.Card__text h5 {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 0 5px 0;
+}
+
+.Card__text ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
 }

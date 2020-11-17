@@ -1,19 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SignDropDown from './SignDropDown';
-import Title from './Title';
 import '../css/Welcome.css';
 import '../css/Title.css';
 
 function Welcome() {
   return (
     <div className="Welcome">
-      <Title />
-      <img
-        src="https://via.placeholder.com/300"
-        alt="Welcome Logo Placeholder"
-      />
-      <h1>Sign in</h1>
+      <div className="Title">
+        <h3>Welcome to the Would You Rather App!</h3>
+      </div>
+      <h1>Would you rather?</h1>
+      <h3>Sign in</h3>
       <SignDropDown />
     </div>
   );
