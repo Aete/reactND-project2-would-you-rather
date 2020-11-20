@@ -10,6 +10,10 @@ function Question({ questions, authedUser, users, qid }) {
     alert('Please log in first');
     return <Redirect to="/" />;
   }
+  if (questions[qid] === undefined) {
+    alert('The question key is unvalid');
+    return <Redirect to="/" />;
+  }
   const question = questions[qid];
   const author = users[question.author];
   const userAnswered = [
