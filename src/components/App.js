@@ -3,14 +3,11 @@ import { handleInitialData } from '../actions/shared';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Welcome from './Welcome';
 import Home from './Home';
 import Loading from './Loading';
 import Question from './Question';
 import NewQuestion from './NewQuestion';
 import LeaderBoard from './LeaderBoard';
-import AnswerSheet from './AnswerSheet';
-import Result from './Result';
 import Error from './Error';
 
 import '../css/App.css';
@@ -27,17 +24,10 @@ class App extends Component {
         {Object.keys(users).length > 0 ? (
           <Router>
             <Switch>
-              <Route exact path="/" component={Welcome} />
-              <Route exact path="/user/:id" component={Home} />
-              <Route exact path="/question/:id" component={Question} />
-              <Route exact path="/add" component={NewQuestion} />
-              <Route
-                exact
-                path="/question/:id/answer"
-                component={AnswerSheet}
-              />
-              <Route exact path="/question/:id/result" component={Result} />
-              <Route exact path="/leaderboard" component={LeaderBoard} />
+              <Route exact path="/" component={Home} />
+              <Route path="/add" component={NewQuestion} />
+              <Route path="/question/:id" component={Question} />
+              <Route path="/leaderboard" component={LeaderBoard} />
               <Route component={Error} />
             </Switch>
           </Router>

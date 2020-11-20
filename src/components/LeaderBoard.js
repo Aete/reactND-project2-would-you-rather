@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import Nav from './Nav';
 import Score from './Score';
@@ -8,8 +9,11 @@ import '../css/LeaderBoard.css';
 
 class LeaderBoard extends Component {
   render() {
-    const { users } = this.props;
-
+    const { users, authedUser } = this.props;
+    if (authedUser === null) {
+      alert('Please log in first');
+      return <Redirect to="/" />;
+    }
     const usersSorted = Object.values(users).sort(
       (a, b) =>
         Object.keys(b.answers).length +
@@ -39,8 +43,8 @@ class LeaderBoard extends Component {
   }
 }
 
-function mapStateToProps({ users }) {
-  return { users };
+function mapStateToProps({ users, authedUser }) {
+  return { users, authedUser };
 }
 
 export default connect(mapStateToProps)(LeaderBoard);

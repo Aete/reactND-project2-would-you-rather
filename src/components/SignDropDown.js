@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../css/SignDropDown.css';
 import { setAuthedUser } from '../actions/authedUser';
-import { Link, withRouter } from 'react-router-dom';
 
 class SignDropDown extends Component {
   state = {
@@ -20,7 +19,6 @@ class SignDropDown extends Component {
   handleAuthUser(e, id) {
     e.preventDefault();
     this.props.dispatch(setAuthedUser(id));
-    this.props.history.push(`/user/${id}`);
   }
 
   render() {
@@ -38,10 +36,8 @@ class SignDropDown extends Component {
                 key={user.id}
                 onClick={(e) => this.handleAuthUser(e, user.id)}
               >
-                <Link to={`/user/${user.id}`}>
-                  <img src={user.avatarURL} alt="avatar" />
-                  <span>{user.name}</span>
-                </Link>
+                <img src={user.avatarURL} alt="avatar" />
+                <span>{user.name}</span>
               </li>
             ))}
           </ul>
@@ -55,4 +51,4 @@ function mapStateToProps({ users }) {
   return { users };
 }
 
-export default withRouter(connect(mapStateToProps)(SignDropDown));
+export default connect(mapStateToProps)(SignDropDown);

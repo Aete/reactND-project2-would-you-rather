@@ -37,12 +37,12 @@ export default function Card({ author, question, answer }) {
         </div>
       </div>
       {answer === 'unanswered' && (
-        <Link to={`/question/${question.id}/answer`}>
+        <Link to={`/question/${question.id}`}>
           <button>Answer</button>
         </Link>
       )}
       {answer !== 'unanswered' && (
-        <Link to={`/question/${question.id}/result`}>
+        <Link to={`/question/${question.id}`}>
           <button>Result</button>
         </Link>
       )}

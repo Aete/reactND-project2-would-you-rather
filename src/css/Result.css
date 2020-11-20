@@ -3,3 +3,31 @@
   flex-direction: column;
   align-items: center;
 }
+
+.Card__result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Card__result ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.Card__result ul li:last-child {
+  margin-bottom: 0;
+}
+
+.Card__result-chosen {
+  font-size: 15px;
+  background-color: #212121;
+  color: #fff;
+  padding: 5px 3px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}

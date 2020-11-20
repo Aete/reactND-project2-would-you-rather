@@ -44,7 +44,11 @@ class NewQuestion extends Component {
     const { authedUser, users } = this.props;
     const { toHome } = this.state;
     if (toHome === true) {
-      return <Redirect to={`/user/${authedUser}`} />;
+      return <Redirect to={`/`} />;
+    }
+    if (authedUser === null) {
+      alert('Please log in first');
+      return <Redirect to="/" />;
     }
     return (
       <div className="NewQuestion">

@@ -24,7 +24,7 @@ class Nav extends Component {
               style={{
                 color: highlight === 'Home' ? '#121212' : '#bbb',
               }}
-              to={`/user/${authedUser}`}
+              to={`/`}
             >
               Home
             </NavLink>

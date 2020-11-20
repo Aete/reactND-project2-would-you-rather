@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { handleAddAnswer } from '../actions/questions';
-import Nav from './Nav';
+import { connect } from 'react-redux';
 
 import '../css/Card.css';
 import '../css/AnswerSheet.css';
@@ -34,15 +33,14 @@ class AnswerSheet extends Component {
   };
 
   render() {
-    const { question, author, authedUser } = this.props;
+    const { question, author } = this.props;
     const { toHome } = this.state;
     if (toHome === true) {
-      return <Redirect to={`/user/${authedUser}`} />;
+      return <Redirect to={`/question/${question.id}`} />;
     }
 
     return (
       <div className="AnswerSheet">
-        <Nav highlight="none" />
         <div className="Card">
           <h3>{author.name} asks</h3>
           <div className="Card__main">
@@ -84,13 +82,4 @@ class AnswerSheet extends Component {
   }
 }
 
-function mapStateToProps({ questions, users, authedUser }, props) {
-  const { id } = props.match.params;
-  return {
-    question: questions[id],
-    author: users[questions[id].author],
-    authedUser,
-  };
-}
-
-export default connect(mapStateToProps)(AnswerSheet);
+export default connect()(AnswerSheet);
