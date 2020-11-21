@@ -29,7 +29,6 @@ class NewQuestion extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     const { optionOne, optionTwo } = this.state;
     const { dispatch } = this.props;
     dispatch(handleAddQuestion(optionOne, optionTwo));
@@ -41,14 +40,10 @@ class NewQuestion extends Component {
   };
 
   render() {
-    const { authedUser, users } = this.props;
+    const { users, authedUser } = this.props;
     const { toHome } = this.state;
     if (toHome === true) {
       return <Redirect to={`/`} />;
-    }
-    if (authedUser === null) {
-      alert('Please log in first');
-      return <Redirect to="/" />;
     }
     return (
       <div className="NewQuestion">
@@ -83,11 +78,10 @@ class NewQuestion extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users, questions }) {
+function mapStateToProps({ authedUser, users }) {
   return {
-    authedUser,
     users,
-    questions,
+    authedUser,
   };
 }
 

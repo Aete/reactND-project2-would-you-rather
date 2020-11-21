@@ -6,13 +6,9 @@ import Nav from './Nav';
 import { Redirect } from 'react-router-dom';
 
 function Question({ questions, authedUser, users, qid }) {
-  if (authedUser === null) {
-    alert('Please log in first');
-    return <Redirect to="/" />;
-  }
   if (questions[qid] === undefined) {
     alert('The question key is unvalid');
-    return <Redirect to="/" />;
+    return <Redirect to="/404" />;
   }
   const question = questions[qid];
   const author = users[question.author];

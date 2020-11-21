@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import SignDropDown from './SignDropDown';
 import '../css/Welcome.css';
 import '../css/Title.css';
@@ -16,9 +15,4 @@ function Welcome() {
     </div>
   );
 }
-
-function mapStateToProps({ users }) {
-  return { users };
-}
-
-export default connect(mapStateToProps)(Welcome);
+export default Welcome;
